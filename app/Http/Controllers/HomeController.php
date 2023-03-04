@@ -52,7 +52,7 @@ class HomeController extends Controller
        if($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('post-gambar');
        } else {
-              $validatedData['gambar'] = "empty";
+              $validatedData['gambar'] = "post-gambar/empty.jpg";
        }
 
          Tb_produk::create($validatedData);
@@ -92,3 +92,6 @@ class HomeController extends Controller
         return redirect('/dataproduk')->with('successDelete', '( Produk berhasil di hapus )');
     }
 }
+
+
+
